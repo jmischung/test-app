@@ -1,0 +1,18 @@
+# .gitignore
+.DS_Store
+.idea/
+__pycache__/
+*.pyc
+
+# Virtual environment files
+venv/
+.venv/
+env/
+.env/
+.python-version
+
+# mypy cache
+.mypy_cache/
+
+# pytest cache
+.pytest_cache/
