@@ -5,14 +5,17 @@
   "keywords": ["streamlit", "heroku", "template"],
   "env": {
     "SECRET_KEY": {
-    "description": "A secret key for verifying the integrity of signed cookies.",
-    "required": true
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "required": true
     }
   },
   "buildpacks": [
     {
       "url": "heroku/python"
     }
-  ]
+  ],
+  "scripts": {
+    "test": "pytest"
+  }
 }
   
