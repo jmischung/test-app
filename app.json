@@ -1,7 +1,7 @@
 {
   "name": "Streamlit App",
   "description": "A Streamlit app with CI/CD integration and deployment to Heroku.",
-  "repository": "https://github.com/your_github_username/your_repository_name",
+  "repository": "https://github.com/jmischung/test-app",
   "keywords": ["streamlit", "heroku", "template"],
   "env": {
     "SECRET_KEY": {
