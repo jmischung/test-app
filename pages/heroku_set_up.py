@@ -36,19 +36,30 @@ def main():
     # Heroku deployment
     st.subheader("Heroku Deployment")
     instructions = """
-    #### 1. Create a Staging Heroku App
-    1. Log in to Heroku using the Heroku CLI:  
-    ```heroku login```
-    2. Create the Staging App:  
-    ```heroku create your-staging-app-name```  
+    1. Create the Staging and Production Apps
+        - Log in to Heroku using the Heroku CLI:  
+        ```heroku login```
+        - Create the Staging App:  
+        ```heroku create your-staging-app-name```  
+        - Create the Production App:  
+        ```heroku create your-production-app-name```        
 
-    *Replace `your-staging-app-name` with the name you want to give your staging app.*  
+    2. Create the Pipeline
+        - Create the Pipeline:  
+        The command must specify an existing app to be added to the pipeline.  
+        ```heroku pipelines:create -a your-staging-app-name```
+        - Add the Production App to the Pipeline:  
+        ```heroku pipelines:add your-pipeline-name -a your-production-app-name```  
+
+    3. Configure the Pipeline  
+        - From the Heroku dashboard, go to the pipeline and click on the settings tab.
+        - In the `Connect to GitHub` section, connect the pipeline to the GitHub repository.  
+        - In the `Review apps` section, enable review apps. Check the boxes for 'Create new review
+        apps for new pull requests...', 'Wait for CI to pass', and 'Destroy stale review apps'.  
+        - in the `Heroku CI` section, enable Heroku CI.  
+
+    At this point, the pipeline should look something like this:
     
-    3. Note Down the App Name and API Key:  
-        - The name of the app you created will be used later.  
-        - To get the API key, go to the Heroku dashboard [here](https://dashboard.heroku.com/apps), 
-    click on the app you created, and go to the `Settings` tab. Click on the `Reveal` button and 
-    copy the `API Key` value.
     """  # noqa W291
     st.markdown(instructions)
 
