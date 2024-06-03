@@ -15,7 +15,7 @@ def test_homepage():
     assert "This is the home page" in at.markdown[0].value  # nosec B101
 
 
-def test_heroku_set_up():
+def test_heroku_set_up_page():
     """
     Test the page A functionality of the app.
     """
@@ -26,12 +26,12 @@ def test_heroku_set_up():
     assert "deploying this Streamlit app to Heroku" in at.markdown[0].value  # nosec B101
 
 
-def test_another_age():
+def test_github_config_page():
     """
     Test the another page functionality of the app.
     """
     at = AppTest.from_file("../homepage.py").run()
-    at.switch_page("pages/another_page.py").run()
+    at.switch_page("pages/github_configuration.py").run()
     assert not at.exception  # nosec B101
-    assert at.title[0].value == "Another Page"  # nosec B101
-    assert "This is another page" in at.markdown[0].value  # nosec B101
+    assert at.title[0].value == "GitHub Configuration"  # nosec B101
+    assert "branch protection rules" in at.markdown[0].value  # nosec B101

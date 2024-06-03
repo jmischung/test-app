@@ -59,9 +59,9 @@ def main():
         - in the `Heroku CI` section, enable Heroku CI.  
 
     At this point, the pipeline should look something like this:
-    
     """  # noqa W291
     st.markdown(instructions)
+    st.image("images/heroku_pipeline.png", use_column_width=True)
 
 
 if __name__ == "__main__":
