@@ -18,13 +18,8 @@
           "size": "standard-2x"
         }
       },
-      "build": {
-        "commands": [
-          "pip install pytest"
-        ],
-        "scripts": {
-          "test": "pytest"
-        }
+      "scripts": {
+        "test": "pytest"
       }
     }
   }
