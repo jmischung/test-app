@@ -1,0 +1,27 @@
+{
+  "name": "Streamlit App",
+  "description": "A Streamlit app with CI/CD integration and deployment to Heroku.",
+  "repository": "https://github.com/jmischung/test-app",
+  "keywords": ["streamlit", "heroku", "template"],
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  },
+  "image": "heroku/python",
+  "environments": {
+    "test": {
+      "formation": {
+        "test": {
+          "quantity": 1,
+          "size": "standard-2x"
+        }
+      },
+      "scripts": {
+        "test": "pytest"
+      }
+    }
+  }
+}
+  
