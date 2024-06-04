@@ -4,18 +4,22 @@
   "repository": "https://github.com/jmischung/test-app",
   "keywords": ["streamlit", "heroku", "template"],
   "env": {
-    "SECRET_KEY": {
+    "SECRET_TOKEN": {
       "description": "A secret key for verifying the integrity of signed cookies.",
-      "required": false
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "pytest"
+      }
     }
   },
   "buildpacks": [
     {
       "url": "heroku/python"
     }
-  ],
-  "scripts": {
-    "test": "pytest"
-  }
+  ]
 }
   
