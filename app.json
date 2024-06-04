@@ -9,17 +9,19 @@
       "generator": "secret"
     }
   },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-2x"
+    }
+  },
+  "image": "heroku/python",
   "environments": {
     "test": {
       "scripts": {
         "test": "pytest"
       }
     }
-  },
-  "buildpacks": [
-    {
-      "url": "heroku/python"
-    }
-  ]
+  }
 }
   
