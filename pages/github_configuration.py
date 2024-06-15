@@ -25,14 +25,22 @@ def main():
     2. Access Branch Protection Rules:  
         - Click on the `Branches` tab in the left sidebar.
         - Click on the `Add rule` button.
-    3. Configure the Branch Protection Rule for `main` branch:  
+    3. Configure the Branch Protection Rules:  
         - Under `Branch name pattern`, enter `main`.
-        - Check the box for `Require pull request reviews before merging` and check the box `Require approvals`.
+        - Check the box for `Require a pull request before merging`.
         - Check `Require status checks to pass before merging` and check the box for `Require branches to be up to date before merging`.
         - In the search box, type the name of the CI/CD workflow that runs on GitHub Actions.  
         *Note: The name of the CI/CD workflow comes from the `ci-cd.yml` file in `.github/workflows`.*
+        - Repeat the above steps for the `develop` branch.  
+    
+    At this point, the branch protection rules should look something like this:
     """  # noqa W291
     st.markdown(instructions)
+    st.image(
+        "images/github_branchProtectionRule.png",
+        width=300,
+        caption="Branch Protection Rules for the main branch",
+    )
 
 
 if __name__ == "__main__":
