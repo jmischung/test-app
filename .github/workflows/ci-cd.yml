@@ -32,8 +32,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
     - name: Check formatting with black
       run: |
-        pwd
-        ls -R
+        black --check .
     - name: Run tests
       run: |
         pytest -vv
